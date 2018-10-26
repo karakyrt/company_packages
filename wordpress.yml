@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Download wordpress
-      when: ansible_os_family == "RedHat"
+      when: Ansible_os_family == "RedHat"
       get_url:
         url: https://wordpress.org/latest.tar.gz
         dest: /tmp/
