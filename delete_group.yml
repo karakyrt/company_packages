@@ -1,0 +1,16 @@
+---
+- name: Add group
+  hosts: all
+  tasks:
+    - name: Add group to RedHat family
+      when: ansible_os_family == "RedHat"
+      group:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - manegers
+        - sales
+        - marketing
+        - IT
+        - NOC
+        - admins
